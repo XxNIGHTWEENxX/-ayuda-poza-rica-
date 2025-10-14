@@ -881,86 +881,81 @@
     </p>
 </footer>
     
-    <script>
-        // Toggle menú móvil
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('active');
-        }
-        function openMap(location) {
-            const encodedLocation = encodeURIComponent(location);
-            window.open(`https://www.google.com/maps/search/?api=1&query=${encodedLocation}`, '_blank');
-        }
-        // Copiar al portapapeles
-        function copyToClipboard(elementId) {
-            const text = document.getElementById(elementId).textContent;
-            navigator.clipboard.writeText(text).then(() => {
-                alert('CLABE copiada al portapapeles');
-            });
-        }
-        const fabContainer = document.querySelector('.share-fab-container');
-        const mainFabBtn = document.querySelector('.main-share-btn');
+   <div class="share-fab-container">
+    <div class="social-options">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://ayudapozarica.netlify.app" target="_blank" class="social-icon facebook" title="Compartir en Facebook">
+            <svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/></svg>
+        </a>
+        <a href="javascript:void(0);" onclick="shareOnInstagram()" class="social-icon instagram" title="Compartir en Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664 4.771 4.919 4.919 1.266.058 1.644.07 4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"/></svg>
+        </a>
+        <a href="https://wa.me/?text=Ayuda%20a%20las%20familias%20afectadas%20en%20Poza%20Rica.%20https://ayudapozarica.netlify.app" target="_blank" class="social-icon whatsapp" title="Compartir en WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.902-.539-5.586-1.533l-6.262 1.664zm8.281-3.682c.499.288 1.041.447 1.614.448 5.434 0 9.855-4.421 9.856-9.856.001-5.435-4.42-9.856-9.856-9.856-5.434.001-9.855 4.421-9.855 9.856.001 1.738.463 3.429 1.32 4.887l.16.241-1.042 3.805 3.904-1.03zm.226-3.093c-.127-.063-1.092-.54-1.261-.601-.17-.062-.292-.094-.412.062-.12.156-.477.601-.584.721-.108.12-.216.138-.392.079-.176-.059-1.267-.465-2.413-1.485-.889-.787-1.48-1.758-1.656-2.054-.176-.296-.019-.458.058-.601.072-.137.159-.224.24-.302.082-.078.109-.123.164-.208.055-.084.028-.156-.014-.284-.042-.128-.392-.942-.537-1.282-.14-.336-.282-.291-.392-.296-.106-.005-.237-.005-.367-.005s-.352.046-.529.224c-.176.177-.674.656-.674 1.601s.699 1.861.797 1.981c.098.12.633.992 2.372 1.874.427.22.784.354 1.06.456.407.147.772.126.97.078.228-.053 1.092-.447 1.262-.879.17-.431.17-.801.118-.879-.051-.078-.176-.123-.352-.208z"/></svg>
+        </a>
+    </div>
+    <button class="main-share-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="white"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"/></svg>
+    </button>
+</div>
 
-        mainFabBtn.addEventListener('click', () => {
-            fabContainer.classList.toggle('active');
+<script>
+    // Toggle menú móvil
+    function toggleMenu() {
+        const menu = document.getElementById('navMenu');
+        menu.classList.toggle('active');
+    }
+
+    // Función de mapa CORREGIDA
+    function openMap(location) {
+        const encodedLocation = encodeURIComponent(location);
+        window.open(`https://www.google.com/maps/search/?api=1&query=${encodedLocation}`, '_blank');
+    }
+
+    // Copiar al portapapeles
+    function copyToClipboard(elementId) {
+        const text = document.getElementById(elementId).textContent;
+        navigator.clipboard.writeText(text).then(() => {
+            alert('CLABE copiada al portapapeles');
         });
+    }
 
-        
-        function shareOnInstagram() {
-    // Copia la URL de la página al portapapeles
-            navigator.clipboard.writeText(window.location.href).then(() => {
-        // Muestra un mensaje con instrucciones
+    // Lógica para el botón flotante de compartir
+    const fabContainer = document.querySelector('.share-fab-container');
+    const mainFabBtn = document.querySelector('.main-share-btn');
+
+    mainFabBtn.addEventListener('click', () => {
+        fabContainer.classList.toggle('active');
+    });
+    
+    // Función para compartir en Instagram
+    function shareOnInstagram() {
+        navigator.clipboard.writeText(window.location.href).then(() => {
             alert(
                 '¡Enlace copiado!\n\n' +
                 'Para compartir en Instagram:\n' +
                 '1. Abre la app de Instagram.\n' +
                 '2. Crea una nueva Historia.\n' +
                 '3. Usa el sticker de "Enlace" y pega el link.'
-                );
-            });
-        }
-// --- TERMINA CÓDIGO NUEVO ---
-
-        
-        // Smooth scroll para los enlaces
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Cerrar menú móvil si está abierto
-                    document.getElementById('navMenu').classList.remove('active');
-                }
-            });
+            );
         });
-        
-        // Actualizar contador de personas ayudadas (simulación)
-        let helpedCount = 12500;
-        setInterval(() => {
-            helpedCount += Math.floor(Math.random() * 5) + 1;
-            // Podrías mostrar esto en algún lugar de la página
-        }, 30000);
-        <div class="share-fab-container">
-        <div class="social-options">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://ayudapozarica.netlify.app" target="_blank" class="social-icon facebook" title="Compartir en Facebook">
-                <svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/></svg>
-            </a>
-            <a href="javascript:void(0);" onclick="shareOnInstagram()" class="social-icon instagram" title="Compartir en Instagram">
-                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664 4.771 4.919 4.919 1.266.058 1.644.07 4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"/></svg>
-            </a>
-            <a href="https://wa.me/?text=Ayuda%20a%20las%20familias%20afectadas%20en%20Poza%20Rica.%20https://ayudapozarica.netlify.app" target="_blank" class="social-icon whatsapp" title="Compartir en WhatsApp">
-                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.902-.539-5.586-1.533l-6.262 1.664zm8.281-3.682c.499.288 1.041.447 1.614.448 5.434 0 9.855-4.421 9.856-9.856.001-5.435-4.42-9.856-9.856-9.856-5.434.001-9.855 4.421-9.855 9.856.001 1.738.463 3.429 1.32 4.887l.16.241-1.042 3.805 3.904-1.03zm.226-3.093c-.127-.063-1.092-.54-1.261-.601-.17-.062-.292-.094-.412.062-.12.156-.477.601-.584.721-.108.12-.216.138-.392.079-.176-.059-1.267-.465-2.413-1.485-.889-.787-1.48-1.758-1.656-2.054-.176-.296-.019-.458.058-.601.072-.137.159-.224.24-.302.082-.078.109-.123.164-.208.055-.084.028-.156-.014-.284-.042-.128-.392-.942-.537-1.282-.14-.336-.282-.291-.392-.296-.106-.005-.237-.005-.367-.005s-.352.046-.529.224c-.176.177-.674.656-.674 1.601s.699 1.861.797 1.981c.098.12.633.992 2.372 1.874.427.22.784.354 1.06.456.407.147.772.126.97.078.228-.053 1.092-.447 1.262-.879.17-.431.17-.801.118-.879-.051-.078-.176-.123-.352-.208z"/></svg>
-            </a>
-        </div>
-        <button class="main-share-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"/></svg>
-        </button>
-    </div>
-    <script>
-    </script>
+    }
+    
+    // Smooth scroll para los enlaces
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Cerrar menú móvil si está abierto
+                document.getElementById('navMenu').classList.remove('active');
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

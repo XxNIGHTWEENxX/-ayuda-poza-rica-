@@ -827,7 +827,10 @@
             const menu = document.getElementById('navMenu');
             menu.classList.toggle('active');
         }
-        
+         function openMap(location) {
+            const encodedLocation = encodeURIComponent(location);
+            window.open(`https://www.google.com/maps/search/?api=1&query=${encodedLocation}`, '_blank');
+        }
         // Copiar al portapapeles
         function copyToClipboard(elementId) {
             const text = document.getElementById(elementId).textContent;

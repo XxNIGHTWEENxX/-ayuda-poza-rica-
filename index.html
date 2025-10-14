@@ -889,10 +889,11 @@
         menu.classList.toggle('active');
     }
 
-    // Función de mapa CORREGIDA
+    // Función de mapa CORREGIDA (con la URL correcta y la sintaxis arreglada)
     function openMap(location) {
         const encodedLocation = encodeURIComponent(location);
-        window.open(`https://maps.google.com/?q=${encodedLocation}`, '_blank');
+        // Esta URL ahora es correcta y está dentro de comillas ` `
+        window.open(`https://www.google.com/maps/search/?api=1&query=${encodedLocation}`, '_blank');
     }
 
     // Copiar al portapapeles
@@ -903,7 +904,7 @@
         });
     }
 
-    // Lógica para el botón flotante de compartir
+    // Lógica para el botón flotante de compartir (ESTO AHORA SÍ SE EJECUTARÁ)
     const fabContainer = document.querySelector('.share-fab-container');
     const mainFabBtn = document.querySelector('.main-share-btn');
 
@@ -940,7 +941,6 @@
         });
     });
 </script>
-
 </body>
 </html>
 

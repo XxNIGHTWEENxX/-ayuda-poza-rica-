@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ayudapozarica.netlify.app/sitemap.xml

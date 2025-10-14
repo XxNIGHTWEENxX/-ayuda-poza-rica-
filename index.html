@@ -239,6 +239,12 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
         
+        .need-card-urgent {
+            border-top-color: var(--warning); /* Usamos el color amarillo de advertencia */
+            box-shadow: 0 10px 40px rgba(254, 202, 87, 0.4); /* Le damos un brillo sutil */
+        }
+
+        
         .need-icon {
             font-size: 2.5em;
             margin-bottom: 15px;
@@ -660,6 +666,18 @@
         <p class="section-subtitle">Tu donación puede marcar la diferencia entre la desesperanza y la esperanza</p>
         
         <div class="needs-grid">
+            <div class="need-card need-card-urgent">
+                <div class="need-icon">⛏️</div>
+                <h3 class="need-title">Limpieza y Remoción (¡Urgente!)</h3>
+                <ul class="need-items">
+                    <li>Botas de hule (impermeables)</li>
+                    <li>Guantes de carnaza o plástico</li>
+                    <li>Palas y recogedores de metal</li>
+                    <li>Carretillas</li>
+                    <li>Cubetas y cepillos de cerda dura</li>
+                    <li>Jaladores de agua (trapeadores no)</li>
+                </ul>
+            </div>
             <div class="need-card">
                 <div class="need-icon">🍲</div>
                 <h3 class="need-title">Alimentos</h3>

@@ -1017,33 +1017,53 @@
             <p style="text-align: center; color: #666; margin-bottom: 40px;">Haz clic en las miniaturas para ver los videos en YouTube</p>
           <!-- Si tu Short es: https://youtube.com/shorts/XyZ123 -->
 
-        <div class="video-card" onclick="openVideo('https://youtube.com/shorts/L91ULjNT7dA')">
-            <div class="video-thumbnail">
-                <img src="Inundacion4.jpg" alt="Descripción">
-            <div class="play-button">▶</div>
-        </div>
-            <h4>Título de tu video</h4>
-            <p>Descripción del contenido</p>
-        </div>
-                
-                <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=https://youtube.com/shorts/ZmajDYCkoXo?si=6a6VFiu-Zv0Qe46P')" style="cursor: pointer;">
-                    <div class="video-thumbnail">
-                        <img src="https://via.placeholder.com/640x360/667eea/ffffff?text=Video+2+-+Testimonios" alt="Testimonios de damnificados">
-                        <div class="play-button">▶</div>
-                    </div>
-                    <h4>Testimonios de Damnificados</h4>
-                    <p>Historias de las familias afectadas por la tragedia</p>
+            <div class="short-card">
+                <div class="short-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/kqyjfjqjfcY" 
+                        title="Situacion Poza Rica" 
+                        frameborder="0" 
+                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
-                
-                <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=https://youtube.com/shorts/T5QlN6ilz3E')" style="cursor: pointer;">
-                    <div class="video-thumbnail">
-                        <img src="https://via.placeholder.com/640x360/feca57/ffffff?text=Video+3+-+Cómo+Ayudar" alt="Cómo ayudar">
-                        <div class="play-button">▶</div>
-                    </div>
-                    <h4>Cómo Puedes Ayudar</h4>
-                    <p>Guía completa para hacer llegar tu apoyo</p>
+                <div class="short-info">
+                    <h4>Título de tu Short</h4>
+                    <p>Descripción breve</p>
                 </div>
             </div>
+                
+                <div class="short-card">
+                    <div class="short-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/ZmajDYCkoXo" 
+                            title="Descripción del video" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="short-info">
+                        <h4>Título de tu Short</h4>
+                        <p>Descripción breve</p>
+                    </div>
+                </div>
+                
+                <div class="short-card">
+                    <div class="short-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/L91ULjNT7dA" 
+                            title="Descripción del video" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="short-info">
+                        <h4>Título de tu Short</h4>
+                        <p>Descripción breve</p>
+                    </div>
+                </div>
             
             <!-- Alternativa: Videos embebidos en un modal -->
             <div id="videoModal" class="video-modal" onclick="closeVideoModal()">

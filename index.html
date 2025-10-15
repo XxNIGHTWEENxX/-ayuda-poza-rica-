@@ -715,6 +715,125 @@
             height: 100%;
         }
         
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .video-thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: var(--primary);
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        .video-card:hover .play-button {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: white;
+        }
+        
+        /* Modal para videos */
+        .video-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
+        }
+        
+        .video-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 1000px;
+            animation: slideIn 0.3s;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--primary);
+        }
+        
+        .modal-video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-radius: 10px;
+        }
+        
+        .modal-video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         .video-card h4 {
             font-size: 1.2em;
             color: var(--dark);
@@ -895,47 +1014,43 @@
         <!-- Sección de Videos -->
         <div class="videos-section">
             <h3 style="text-align: center; margin: 50px 0 30px; font-size: 2em; color: var(--dark);">Videos de la Emergencia</h3>
+            <p style="text-align: center; color: #666; margin-bottom: 40px;">Haz clic en las miniaturas para ver los videos en YouTube</p>
             <div class="videos-grid">
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe 
-                            src="https://youtube.com/shorts/L91ULjNT7dA?feature=share" 
-                            title="Situación actual en Poza Rica" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+                <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=https://youtube.com/shorts/L91ULjNT7dA')" style="cursor: pointer;">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/640x360/ff6b6b/ffffff?text=Video+1+-+Situación+Actual" alt="Situación actual en Poza Rica">
+                        <div class="play-button">▶</div>
                     </div>
                     <h4>Situación Actual en Poza Rica</h4>
                     <p>Recorrido por las zonas más afectadas por la inundación</p>
                 </div>
                 
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe 
-                            src="https://youtube.com/shorts/L91ULjNT7dA?si=YM3hNnjbJ6Mze7m_" 
-                            title="La situacion actual de algunas colonias en Poza Rica" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+                <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=https://youtube.com/shorts/ZmajDYCkoXo?si=6a6VFiu-Zv0Qe46P')" style="cursor: pointer;">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/640x360/667eea/ffffff?text=Video+2+-+Testimonios" alt="Testimonios de damnificados">
+                        <div class="play-button">▶</div>
                     </div>
                     <h4>Testimonios de Damnificados</h4>
                     <p>Historias de las familias afectadas por la tragedia</p>
                 </div>
                 
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe 
-                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                            title="Cómo ayudar" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+                <div class="video-card" onclick="openVideo('https://www.youtube.com/watch?v=https://youtube.com/shorts/T5QlN6ilz3E')" style="cursor: pointer;">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/640x360/feca57/ffffff?text=Video+3+-+Cómo+Ayudar" alt="Cómo ayudar">
+                        <div class="play-button">▶</div>
                     </div>
                     <h4>Cómo Puedes Ayudar</h4>
                     <p>Guía completa para hacer llegar tu apoyo</p>
+                </div>
+            </div>
+            
+            <!-- Alternativa: Videos embebidos en un modal -->
+            <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+                <div class="video-modal-content" onclick="event.stopPropagation()">
+                    <span class="close-modal" onclick="closeVideoModal()">&times;</span>
+                    <div class="modal-video-wrapper">
+                        <iframe id="modalVideoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1295,6 +1410,44 @@
     setInterval(() => {
         moveCarousel(1);
     }, 5000); // Cambia cada 5 segundos
+
+    // --- Funciones para Videos ---
+    function openVideo(youtubeUrl) {
+        // Opción 1: Abrir en nueva pestaña (más seguro y siempre funciona)
+        window.open(youtubeUrl, '_blank');
+        
+        // Opción 2: Abrir en modal (descomenta esto si prefieres modal)
+        /*
+        const videoId = extractVideoId(youtubeUrl);
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('modalVideoFrame');
+        
+        if (videoId) {
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            modal.classList.add('active');
+        }
+        */
+    }
+    
+    function closeVideoModal() {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('modalVideoFrame');
+        modal.classList.remove('active');
+        iframe.src = ''; // Detener el video
+    }
+    
+    function extractVideoId(url) {
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+        const match = url.match(regExp);
+        return (match && match[2].length === 11) ? match[2] : null;
+    }
+    
+    // Cerrar modal al presionar ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeVideoModal();
+        }
+    });
 
 </script>
 
